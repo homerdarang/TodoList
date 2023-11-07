@@ -1,5 +1,6 @@
 'use strict';
 
+
 window.addEventListener('load', () => {
     let add = document.querySelector('.add');
     let input = document.querySelector('#user-input');
@@ -41,7 +42,7 @@ window.addEventListener('load', () => {
         ul.appendChild(btnDelete);
         ul.appendChild(btnView);
         taskList.append(ul);
-
+        
         // Set empty input again after adding task
         input.value = '';
 
@@ -79,6 +80,14 @@ window.addEventListener('load', () => {
             }
         });
     });
+    // Adding keypress listener for good ux to add task
+    document.addEventListener('keyup', (evt) => {
+        evt.preventDefault();
+        if(evt.key === 'Enter') {
+            add.click();
+        }
+    });
+
 });
 
 // Mas okay kun pad add hit todo list is ma popup it modal para mangaru hin title 
