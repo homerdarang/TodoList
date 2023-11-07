@@ -73,6 +73,7 @@ window.addEventListener('load', () => {
                 rightDisplay.classList.remove('hidden');
                 rightDisplay.appendChild(p);
                 p.classList.add('fs-6');
+                inputTask = newInput.value; //this will update the todo details once u edit ur todo.
                 p.textContent = inputTask;
                 btnView.textContent = 'Hide';
             } else {
