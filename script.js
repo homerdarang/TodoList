@@ -89,7 +89,3 @@ window.addEventListener('load', () => {
     });
 
 });
-
-// Mas okay kun pad add hit todo list is ma popup it modal para mangaru hin title 
-// hit todo list. Tapos pag gin click or tap it view button,
-// is magawas ha rightDisplay it title hit todo list nga gin add ngan an details han todo list
