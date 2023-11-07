@@ -8,8 +8,6 @@ window.addEventListener('load', () => {
     let taskList = document.querySelector('#list-task');
     let rightDisplay = document.querySelector('.right-side');
     let p = document.createElement('p');
-    // let viewTitle = document.querySelector('.todo-content');
-
 
     add.addEventListener('click', () => {
         let inputTask = input.value;
@@ -17,7 +15,6 @@ window.addEventListener('load', () => {
         if(!inputTask) {
             // alert('wrong');
             invalid.textContent = 'Invalid task!';
-            invalid.classList.add('text-center', 'mt-2');
             return false;
         } else {
             invalid.textContent = '';
