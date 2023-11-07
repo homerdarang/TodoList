@@ -17,6 +17,7 @@ window.addEventListener('load', () => {
         if(!inputTask) {
             // alert('wrong');
             invalid.textContent = 'Invalid task!';
+            invalid.classList.add('text-center', 'mt-2');
             return false;
         } else {
             invalid.textContent = '';
