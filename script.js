@@ -7,8 +7,23 @@ window.addEventListener('load', () => {
     let invalid = document.querySelector('.invalid-task');
     let taskList = document.querySelector('#list-task');
     let rightDisplay = document.querySelector('.right-side');
+    let brdrLeft = document.querySelector('.left-side');
+    let tasks = document.querySelector('.tasks');
     let p = document.createElement('p');
 
+    // function to add border class
+    const borderLeft = function() {
+        brdrLeft.classList.add('border-end', 'border-warning', 'rounded-start');
+        brdrLeft.classList.remove('rounded');
+    };
+
+    // function to remove border class
+    const deleteBorderLeft = function() {
+        brdrLeft.classList.remove('border-end', 'border-warning', 'rounded-start');
+        brdrLeft.classList.add('rounded');
+    }
+
+    // Will add the new todo or task.
     add.addEventListener('click', () => {
         let inputTask = input.value;
 
@@ -18,8 +33,9 @@ window.addEventListener('load', () => {
             return false;
         } else {
             invalid.textContent = '';
-        }
+        };
 
+        tasks.classList.toggle('hidden');
         // Create element for taskList
         const ul = document.createElement('ul');
         const newInput = document.createElement('input');
@@ -40,6 +56,7 @@ window.addEventListener('load', () => {
         ul.appendChild(btnDelete);
         ul.appendChild(btnView);
         taskList.append(ul);
+
         
         // Set empty input again after adding task
         input.value = '';
@@ -59,14 +76,17 @@ window.addEventListener('load', () => {
 
         // Adding listener to delete button for todo save content
         btnDelete.addEventListener('click', () => {
+            tasks.classList.toggle('hidden');
             taskList.removeChild(ul);
             rightDisplay.classList.add('hidden');
             p.textContent = '';
+            deleteBorderLeft();
         });
 
         // Displaying content detail to right side view
         // addlistener to newInput to display the content here
         btnView.addEventListener('click', () => {
+            borderLeft();
             if(btnView.textContent === 'View') {
                 rightDisplay.classList.remove('hidden');
                 rightDisplay.appendChild(p);
@@ -76,6 +96,7 @@ window.addEventListener('load', () => {
             } else {
                 rightDisplay.classList.add('hidden');
                 btnView.textContent = 'View';
+                deleteBorderLeft();
             }
         });
     });

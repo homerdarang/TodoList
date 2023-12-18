@@ -16,6 +16,10 @@ input {
     width: 60% !important;
 }
 
+input::placeholder {
+    color: #898996 !important;
+}
+
 .invalid-task {
     color: #f10012 !important;
     display: block !important;
